@@ -16,7 +16,7 @@ body{
     border-radius: 25px;
     width: 50%;
     padding-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     background-color: #190061;
     text-align: center;
 }
@@ -42,4 +42,10 @@ body{
     border-color: transparent;
     font-size: 20px;
     color: rgb(210, 220, 223);
+}
+
+.error-text{
+    text-align: center;
+    color: rgb(255, 55, 20);
+    font-size: 18px;
 }

@@ -1,16 +1,29 @@
 from vulcan import Vulcan
+import logininfo
 
-# TODO: some basic calls for logging probably
-
-async def get_grades(keystore, account):
-    client = get_client(keystore, account)
-
-    async with client:
-        grades = await client.data.get_grades()
+async def get_grades(account):
+    client = _get_client(logininfo.get_keystore(), account)
+    await client.select_student()
+    grades = await client.data.get_grades()
         
-    client.close()
     return grades
 
+async def get_messages(account):
+    client = _get_client(logininfo.get_keystore(), account)
+    await client.select_student()
+    
+    messages = await client.data.get_messages()
+    
+    return messages
 
-def get_client(keystore, account):
+async def get_lessons(account):
+    client = _get_client(logininfo.get_keystore(), account)
+    await client.select_student()
+
+    lessons = await client.data.get_lessons
+
+    return lessons
+
+
+def _get_client(keystore, account):
     return Vulcan(keystore=keystore, account=account)
