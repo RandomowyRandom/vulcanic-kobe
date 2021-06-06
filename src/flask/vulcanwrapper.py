@@ -11,7 +11,7 @@ async def get_grades(account):
 async def get_messages(account):
     client = _get_client(logininfo.get_keystore(), account)
     await client.select_student()
-    
+
     messages = await client.data.get_messages()
     
     return messages
@@ -24,6 +24,14 @@ async def get_lessons(account):
 
     return lessons
 
+async def get_student_info(account):
+    client = _get_client(logininfo.get_keystore(), account)
+    await client.select_student()
+
+    students = await client.get_students()
+    student = students[0]
+
+    return student
 
 def _get_client(keystore, account):
     return Vulcan(keystore=keystore, account=account)

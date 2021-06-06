@@ -1,0 +1,70 @@
+.student-info-card{
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 25px;
+    width: 400px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: #190061;
+    text-align: center;
+    overflow: hidden;
+}
+
+.profile-pic{
+    margin-left: 20px;
+    float: left;
+}
+
+.student-school-name{
+    overflow: hidden;
+}
+
+.popup p{
+    color: inherit;
+    font-size: 16px;
+}
+
+.popup-arrow{
+    color: #282828;
+}
+
+.popup-content {
+    margin: auto;
+    background: #282828;
+    padding: 5px;
+}
+
+[role='tooltip'].popup-content {
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+    border-radius: 10px;
+}
+
+.popup button{
+    background-color: #190061;
+}
+
+button{
+    align-self: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #3500D3;
+    border-radius: 10px;
+    border-color: transparent;
+    font-size: 20px;
+    color: rgb(210, 220, 223);
+}
+
+h2{
+    text-align:left;
+    margin-left: 8%;
+}
+
+p{
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    font-size: 20px;
+    color: #d6d6d6;
+    text-align: left;
+    margin-left: 20px;
+}

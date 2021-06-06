@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-def get_account(straccount: str):
+def _get_account(straccount: str):
 
     acc_dict = json.loads(straccount)
     print(acc_dict)
@@ -19,11 +19,30 @@ def get_account(straccount: str):
 
     return account
 
+@app.route('/student', methods=['GET'])
+async def student():
+    if request.method == 'GET':
+
+        account = _get_account(request.args.get('account'))
+
+        cur_student = await vulcanwrapper.get_student_info(account)
+
+        end_student = {
+            'displayName': f'{cur_student.pupil.first_name} {cur_student.pupil.last_name}',
+            'schoolName': cur_student.unit.display_name,
+        }
+
+        message = {
+            'student': end_student
+        }
+
+        return jsonify(message)
+
 @app.route('/grades', methods=['GET'])
 async def grades():
     if request.method == 'GET':
 
-        account = get_account(request.args.get('account'))
+        account = _get_account(request.args.get('account'))
 
         grades = await vulcanwrapper.get_grades(account)
         grades = [grade async for grade in grades]
@@ -52,7 +71,7 @@ async def grades():
 async def messages():
     if request.method == 'GET':
 
-        account = get_account(request.args.get('account'))
+        account = _get_account(request.args.get('account'))
 
         messages = await vulcanwrapper.get_messages(account)
         messages = [message async for message in messages]

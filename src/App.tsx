@@ -3,6 +3,9 @@ import './components/LoginPrompt'
 import './App.css';
 import LoginPrompt from './components/LoginPrompt';
 import VulcanAPI from './backend/VulcanAPI';
+import StudentInfo from './components/StudentInfo';
+import ProfilePic from './profile_pic.png';
+import GradesPanel from './components/GradesPanel';
 
 interface IProps{
 
@@ -14,7 +17,6 @@ interface IState{
 }
 
 class App extends Component<IProps, IState>{
-
   api: VulcanAPI;
 
   constructor(props: IProps){
@@ -37,7 +39,15 @@ class App extends Component<IProps, IState>{
     return(
       <div className="App">
         <h1>Vulcanic Kobe</h1>
-        {this.state.isLoggedIn ? <h2>Zalogowano jako: {this.state.account}</h2> : <LoginPrompt api={this.api}/>}
+        <h3>Nieoficjalna aplikacja dziennika UONET+</h3>
+        {
+          this.state.isLoggedIn ? 
+          <div>
+            <StudentInfo image={ProfilePic} api={this.api} account={this.state.account}/>
+            <GradesPanel api={this.api} account={this.state.account}></GradesPanel> 
+          </div> : 
+          <LoginPrompt api={this.api}/>
+        }
       </div>
     )
   }

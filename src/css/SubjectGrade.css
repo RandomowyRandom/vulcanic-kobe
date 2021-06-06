@@ -1,0 +1,24 @@
+.subject-name{
+    text-decoration: underline;
+    text-underline-offset: 15px;
+    font-weight: bolder;
+}
+
+.average-grade{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    font-size: 20px;
+}
+
+.subject-grades{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 25px;
+    width: 800px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: #190061;
+    text-align: center;
+    overflow: hidden;
+}

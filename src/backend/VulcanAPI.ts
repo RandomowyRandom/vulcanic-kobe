@@ -27,6 +27,14 @@ class VulcanAPI{
         let data = await res.json();
         return data;
     }
+
+    public async getStudentInfo(account: string){
+        const endpoint = `/student?account=${account}`;
+
+        let res = await fetch(endpoint);
+        let data = await res.json();
+        return data;
+    }
 }
 
 export default VulcanAPI;

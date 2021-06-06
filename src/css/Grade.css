@@ -1,0 +1,15 @@
+.grade-value{
+    float: left;
+    margin-inline: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.grade-value span{
+    vertical-align: middle;
+    font-weight: 900;
+}
+
+.grade-wrapper{
+    margin-left: 10px;
+}

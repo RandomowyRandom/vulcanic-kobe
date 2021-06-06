@@ -43,7 +43,7 @@ class LoginPrompt extends Component<IProps, IState>{
     render(){
         return(
             <div className='login-prompt'>
-                <h2 className='login-head'>Zaloguj się poprzez UONET+</h2>
+                <p className='login-head'>Zaloguj się poprzez UONET+</p>
                 <input className='login-input' placeholder='Token' onChange={e => this.setState({token: e.target.value})}></input>
                 <input className='login-input' placeholder='Symbol' onChange={e => this.setState({symbol: e.target.value})}></input>
                 <input className='login-input' placeholder='PIN' onChange={e => this.setState({pin: e.target.value})}></input>
