@@ -11,8 +11,15 @@
 # production
 /build
 
+#vscode
+.vscode/
+
 # python env
 src/flask/env
+src/flask/bin
+src/flask/lib
+src/flask/lib64
+src/flask/pyvenv.cfg
 src/flask/__pycache__
 
 # misc
@@ -26,3 +33,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 keystore.json
+
+.vscode/settings.json
