@@ -43,10 +43,10 @@ class SubjectGrades extends Component<IProps, IState>{
                     <p className='subject-name'>{this.props.subjectName}</p>
                 </div>
                 {
-                    this.props.grades.map(g => {console.log(g); return <GradeHolder value={g.content} teacher={g.teacher} weight={g.weight}></GradeHolder>})
+                    this.props.grades.map(g => {console.log(g); return <GradeHolder date={g.date} name={g.name} value={g.content} teacher={g.teacher} weight={g.weight}></GradeHolder>})
                 }
                 <p>;</p>
-                <p className='average-grade'>Średnia: {this.round(this.getAverage(), 2)}</p>
+                <p className='average-grade'>Średnia semestralna: {this.round(this.getAverage(), 2)}</p>
             </div>
         )
     }

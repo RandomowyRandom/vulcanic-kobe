@@ -7,7 +7,7 @@ import SubjectGrades from "./SubjectGrades";
 
 interface IProps{
     api: VulcanAPI;
-    account: any;
+    account: string;
 }
 
 interface IState{

@@ -6,6 +6,12 @@ import VulcanAPI from './backend/VulcanAPI';
 import StudentInfo from './components/StudentInfo';
 import ProfilePic from './profile_pic.png';
 import GradesPanel from './components/GradesPanel';
+import MessagesPanel from './components/MessagesPanel';
+
+enum PageType{
+  Grades,
+  Messages
+}
 
 interface IProps{
 
@@ -14,6 +20,7 @@ interface IProps{
 interface IState{
   isLoggedIn: boolean;
   account: any;
+  page: PageType;
 }
 
 class App extends Component<IProps, IState>{
@@ -31,7 +38,8 @@ class App extends Component<IProps, IState>{
     // set basic state
     this.state = {
       isLoggedIn: account !== null,
-      account: account
+      account: account,
+      page: PageType.Grades
     }
   }
 
@@ -44,7 +52,19 @@ class App extends Component<IProps, IState>{
           this.state.isLoggedIn ? 
           <div>
             <StudentInfo image={ProfilePic} api={this.api} account={this.state.account}/>
-            <GradesPanel api={this.api} account={this.state.account}></GradesPanel> 
+            <div className='page-select'>
+              <button onClick={() => {this.setState({page: PageType.Grades})}}>Oceny</button>
+              <button onClick={() => {this.setState({page: PageType.Messages})}}>Wiadomosci</button>
+            </div>
+            {
+              this.state.page === PageType.Grades ?
+                <GradesPanel api={this.api} account={this.state.account}></GradesPanel> 
+              :
+              this.state.page === PageType.Messages ?
+                <MessagesPanel account={this.state.account} api={this.api}/>
+              : 
+              <p></p>
+            }
           </div> : 
           <LoginPrompt api={this.api}/>
         }

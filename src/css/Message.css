@@ -1,0 +1,37 @@
+.message-title{
+    margin-left: 30px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.message-date{
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.message-content{
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.message-author{
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.message{
+    background-color: #190061;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.message button{
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
